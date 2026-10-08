@@ -308,29 +308,3 @@ naulidata-cyberrange/
 ├── ANSWER-KEY.md
 └── README.md
 ```
-
----
-
-## 6. Notes & known quirks (assessment transparency)
-
-- **Never name the service `app` for the headless browser.** The `.app` TLD is on
-  the Chromium **HSTS preload list**, so a headless browser navigating to
-  `http://app:3075` is silently force-upgraded to HTTPS and fails with
-  `net::ERR_SSL_PROTOCOL_ERROR`. The lab therefore exposes network aliases
-  `feedback` / `feedback.admin.local` and points the bot at `http://feedback:3075`.
-- **Base64 length mismatch.** The assessment text states the `X-Forwarded-For`
-  Base64 string is *44 characters* and decodes to `SCENARIO75{BLUE_L0G_HUnt3r_M4st3r}`.
-  The literal string supplied in the brief is in fact **47 characters** and decodes
-  to `PHANTOMGRID{BLUE_L0g_Hunt3r_M4st3r}`. The lab reproduces the **literal string
-  exactly as given** (so the Blue Team's binary-search/threat-hunt answer matches the
-  brief) and documents the discrepancy here. A corrected, padding-valid alternative is
-  `U0NFTkFSSU83NXtCTFVFX0wwR19IVW50M3JfTTRzdDNyfQ==`.
-- **Forged cookies are rejected.** `adm_sess` is validated against a server-side set,
-  so *replay* of a genuinely issued token works, but brute-forcing a random token does
-  not — this keeps the scenario realistic (the flaw is reuse, not predictability).
-- **In-memory state.** `adm_sess` tokens and the feedback queue live in memory and are
-  cleared on container restart; the simulated telemetry in `/opt/admin/logs` persists.
-- **The bot requires egress.** For the XSS `fetch()` to reach the Red Team, the bot
-  container must be able to route to the attacker's listener. In a Proxmox lab this is
-  the same L2/L3 zone; if you run it locally, use the host network so the bot can reach
-  an exfil server bound on the host.
