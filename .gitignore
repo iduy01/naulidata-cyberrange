@@ -1,0 +1,18 @@
+# .gitignore for the Cyber Range lab
+logs/
+*.log
+# ...but keep the committed sample telemetry
+!logs-sample/*.log
+
+captured_cookies.txt
+node_modules/
+package-lock.json
+__pycache__/
+*.pyc
+
+# Deliverable attachments — excluded from the repo (kept on disk)
+docs/ebook/
+docs/slides/
+
+# Deliverable attachments — excluded from the repo (kept on disk)
+docs/

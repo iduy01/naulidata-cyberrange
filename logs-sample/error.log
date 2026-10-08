@@ -1,0 +1,6 @@
+# --- seeded scenario: Cookies Reuse & MFA Bypass ---
+2026-10-08T18:50:15+07:00 [WARN] WAF blocked payload containing forbidden token "<script>" from 10.10.14.50 (uri=/api/feedback)
+2026-10-08T18:50:15+07:00 [CRITICAL] WAF ALERT: first <script> tag blocked for 10.10.14.50
+2026-10-08T18:50:48+07:00 [INFO] feedback stored, author=anonymous src=10.10.14.50 (payload length 96)
+2026-10-08T18:53:10+07:00 [CRITICAL] Authentication bypass anomaly: admin session cookie reused without MFA. user=admin src=10.10.14.50 path=/dashboard verification=/api/verify-mfa(skipped) X-Forwarded-For=UEhBTlRPTUdSSUR7QkxVRV9MMGdfSHVudDNyX000c3Qzcn0
+2026-10-08T18:53:10+07:00 [CRITICAL] cookie reuse event flagged CRITICAL (bearer token not bound to client)

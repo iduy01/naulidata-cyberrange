@@ -1,0 +1,14 @@
+{
+  "name": "admin-feedback-system",
+  "version": "1.0.0",
+  "description": "Intentionally vulnerable Admin Feedback System (Cyber Range: Cookies Reuse & MFA Bypass)",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.19.2"
+  }
+}

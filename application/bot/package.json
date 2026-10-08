@@ -1,0 +1,11 @@
+{
+  "name": "admin-bot",
+  "version": "1.0.0",
+  "description": "Simulated administrator reviewing feedback in the dashboard (drives the stored-XSS -> cookie theft chain).",
+  "main": "bot.js",
+  "private": true,
+  "scripts": { "start": "node bot.js" },
+  "dependencies": {
+    "puppeteer": "^22.12.1"
+  }
+}
