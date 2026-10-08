@@ -6,7 +6,6 @@ below comes from a live deployment; the automated self-test is
 
 | File | Contents |
 |------|----------|
-| [`GET-THE-FLAGS.md`](GET-THE-FLAGS.md) | **Start here.** Step-by-step to collect all 34 flags: 8 steps, exact commands with their output, and a tick-off checklist. |
 | [`WALKTHROUGH-RED.md`](WALKTHROUGH-RED.md) | Red Team, 3 phases: reconnaissance → WAF bypass → session replay & MFA bypass. Ends on `SCENARIO75{RED_C00k13_MFA_Byp4ss_0wn3d}`. |
 | [`WALKTHROUGH-BLUE.md`](WALKTHROUGH-BLUE.md) | Blue Team, 3 phases: log forensics → threat hunting → incident response, plus an incident-response summary table. Ends on `SCENARIO75{BLUE_L0g_Hunt3r_M4st3r}`. |
 | [`Walkthrough-Red-Blue-Lab.md`](Walkthrough-Red-Blue-Lab.md) | Both paths in one document, closed by a *requirement → proof* table. |
