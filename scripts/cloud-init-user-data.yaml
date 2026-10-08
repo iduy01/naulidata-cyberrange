@@ -1,0 +1,52 @@
+#cloud-config
+# ---------------------------------------------------------------------------
+# Cyber Range — "Cookies Reuse & MFA Bypass"
+# cloud-init user-data: turns a fresh Debian 12 cloud image into the lab VM.
+#
+# Used by scripts/proxmox-create-vm.sh (Proxmox snippets storage).
+# On first boot it clones the repo and runs scripts/provision.sh as root,
+# then drops /var/log/cyberrange-ready as a completion marker.
+# ---------------------------------------------------------------------------
+
+hostname: cyberrange
+manage_etc_hosts: true
+
+users:
+  - name: lab
+    gecos: Cyber Range Lab
+    groups: [sudo]
+    shell: /bin/bash
+    sudo: "ALL=(ALL) NOPASSWD:ALL"
+    lock_passwd: false
+    # password: cyberrange   (sha-512 crypt — lab credential, change it if you like)
+    passwd: "$6$cyberrange$w0LyadxhtTJlALLGy6qHJc.yOXAqhDDhaf1t30EebpP6MeoLHUAT0YZfkJ9rboA88djMgQnR9GrWMddCuv.Ai."
+
+ssh_pwauth: true
+disable_root: true
+
+package_update: true
+packages:
+  - git
+  - curl
+  - ca-certificates
+
+write_files:
+  - path: /etc/motd
+    permissions: "0644"
+    content: |
+      =========================================================
+        Cyber Range — "Cookies Reuse & MFA Bypass"  (lab VM)
+      ---------------------------------------------------------
+        Web (vulnerable app) : http://<this-VM-IP>:3075
+        Blue Team SSH        : ssh analyst@<this-VM-IP> -p 2275
+        Logs                 : /opt/admin/logs/
+        Repo                 : /opt/naulidata-cyberrange
+        Readiness marker     : /var/log/cyberrange-ready
+      =========================================================
+
+runcmd:
+  - [ bash, -lc, "rm -rf /opt/naulidata-cyberrange" ]
+  - [ bash, -lc, "git clone --depth 1 https://github.com/iduy01/naulidata-cyberrange.git /opt/naulidata-cyberrange >> /var/log/cyberrange-provision.log 2>&1" ]
+  - [ bash, -lc, "/opt/naulidata-cyberrange/scripts/provision.sh >> /var/log/cyberrange-provision.log 2>&1 && touch /var/log/cyberrange-ready" ]
+
+final_message: "Cyber Range VM deployed. Check /var/log/cyberrange-ready and http://<VM-IP>:3075"
