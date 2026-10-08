@@ -257,8 +257,10 @@ The full step-by-step walkthroughs live in **[`walkthrough/`](walkthrough/)**:
 [`WALKTHROUGH-BLUE.md`](walkthrough/WALKTHROUGH-BLUE.md) (3 phases + an
 incident-response summary table) and the combined, upload-ready
 [`Walkthrough-Red-Blue-Lab.pdf`](walkthrough/Walkthrough-Red-Blue-Lab.pdf).
-The runbook, written explanation, verification evidence and presentation
-deck/ebook are delivered as **separate attachments**, not in this repository.
+
+The **[`documentation/`](documentation/)** folder holds the operating runbook,
+the written explanation (design + full answer key) and the live verification log
+(`scripts/verify.sh` → 20 passed, 0 failed).
 
 ---
 
@@ -293,6 +295,12 @@ naulidata-cyberrange/
 │   ├── WALKTHROUGH-BLUE.md      # Blue Team: 3 phases + incident-response summary
 │   ├── Walkthrough-Red-Blue-Lab.md    # both paths + requirement -> proof table
 │   └── Walkthrough-Red-Blue-Lab.pdf   # same document, upload-ready A4 PDF
+├── documentation/               # runbook, written explanation, verification log
+│   ├── README.md                # index
+│   ├── RUNBOOK.md/.pdf/.docx    # operating runbook (deploy, demo order, teardown)
+│   ├── WRITTEN-EXPLANATION.md   # design + full answer key (38 flags, 7 tables)
+│   ├── Practical-Assessment-Written-Explanation.pdf/.docx
+│   └── VERIFICATION.md          # live run: 20 passed, 0 failed + manual evidence
 ├── logs-sample/                 # sample telemetry (the live logs/ dir is git-ignored)
 ├── logs/                        # created at deploy time, bind-mounted to /opt/admin/logs
 ├── PROXMOX-DEPLOY.md            # deploy as a VM on Proxmox (GUI / cloud-init / template export)
