@@ -295,6 +295,7 @@ naulidata-cyberrange/
 │   └── replay_cookie.sh     # one-liner cookie replay
 ├── walkthrough/                 # full Red & Blue walkthroughs (proof of function)
 │   ├── README.md                # index + quick reference
+│   ├── GET-THE-FLAGS.md         # step-by-step to all 34 flags (+ checklist)
 │   ├── WALKTHROUGH-RED.md       # Red Team: 3 phases, command-level
 │   ├── WALKTHROUGH-BLUE.md      # Blue Team: 3 phases + incident-response summary
 │   ├── Walkthrough-Red-Blue-Lab.md    # both paths + requirement -> proof table

@@ -74,6 +74,8 @@ $ echo 'UEhBTlRPTUdSSUR7QkxVRV9MMGdfSHVudDNyX000c3Qzcn0=' | base64 -d
 PHANTOMGRID{BLUE_L0g_Hunt3r_M4st3r}
 ```
 
-Note (see README §6): the literal string in the brief is 47 characters and decodes
-to a `PHANTOMGRID{...}` value, while the brief's own answer states 44 characters and
-`SCENARIO75{BLUE_L0G_HUnt3r_M4st3r}`. The lab stores the string exactly as supplied.
+Note (see `documentation/WRITTEN-EXPLANATION.md` §6 and
+`walkthrough/GET-THE-FLAGS.md`): the literal string in the brief is 47 characters
+and decodes to a `PHANTOMGRID{...}` value, while the brief's own answer states 44
+characters and `SCENARIO75{BLUE_L0G_HUnt3r_M4st3r}`. The lab stores the string
+exactly as supplied.
