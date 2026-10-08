@@ -46,6 +46,10 @@ Internal DNS: the VM maps `feedback.admin.local → 127.0.0.1` (see `provision.s
 
 ## 2. Deployment (Proxmox environment)
 
+> **Fresh machine with no Docker yet?** Follow
+> **[`GETTING-STARTED.md`](GETTING-STARTED.md)** — it covers Linux (one command),
+> any other distro, and Windows/macOS with Docker Desktop.
+
 The lab is designed to run inside **one Linux VM on a Proxmox hypervisor**.
 Full detail (GUI, `qm` CLI, cloud-init automation and VM template/image export)
 lives in **[`PROXMOX-DEPLOY.md`](PROXMOX-DEPLOY.md)** — the short version follows.
@@ -304,6 +308,7 @@ naulidata-cyberrange/
 ├── logs-sample/                 # sample telemetry (the live logs/ dir is git-ignored)
 ├── logs/                        # created at deploy time, bind-mounted to /opt/admin/logs
 ├── PROXMOX-DEPLOY.md            # deploy as a VM on Proxmox (GUI / cloud-init / template export)
+├── GETTING-STARTED.md           # run it on a fresh machine (no Docker yet) — Linux / Win / macOS
 ├── CODE-REPOSITORY.md           # map of this repo to the submission requirements
 ├── ANSWER-KEY.md
 └── README.md
