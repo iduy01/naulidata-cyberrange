@@ -250,10 +250,15 @@ Final Blue Team flag: `SCENARIO75{BLUE_L0G_HUnt3r_M4st3r}`.
 | Logs shared with the Blue Team | `ssh analyst@<IP> -p 2275` → `/opt/admin/logs` |
 | Telemetry tells the full story | walkthrough, Blue Team steps 1–3 |
 
-The complete flag list is in [`ANSWER-KEY.md`](ANSWER-KEY.md). The longer Red/Blue
-walkthroughs, runbook, written explanation, verification evidence and
-presentation deck/ebook are delivered as **separate attachments**, not in this
-repository.
+The complete flag list is in [`ANSWER-KEY.md`](ANSWER-KEY.md).
+
+The full step-by-step walkthroughs live in **[`walkthrough/`](walkthrough/)**:
+[`WALKTHROUGH-RED.md`](walkthrough/WALKTHROUGH-RED.md) (3 phases),
+[`WALKTHROUGH-BLUE.md`](walkthrough/WALKTHROUGH-BLUE.md) (3 phases + an
+incident-response summary table) and the combined, upload-ready
+[`Walkthrough-Red-Blue-Lab.pdf`](walkthrough/Walkthrough-Red-Blue-Lab.pdf).
+The runbook, written explanation, verification evidence and presentation
+deck/ebook are delivered as **separate attachments**, not in this repository.
 
 ---
 
@@ -282,6 +287,12 @@ naulidata-cyberrange/
 │   ├── exfil_server.py      # captures exfiltrated cookies
 │   ├── red_team_exploit.py  # end-to-end Red Team automation
 │   └── replay_cookie.sh     # one-liner cookie replay
+├── walkthrough/                 # full Red & Blue walkthroughs (proof of function)
+│   ├── README.md                # index + quick reference
+│   ├── WALKTHROUGH-RED.md       # Red Team: 3 phases, command-level
+│   ├── WALKTHROUGH-BLUE.md      # Blue Team: 3 phases + incident-response summary
+│   ├── Walkthrough-Red-Blue-Lab.md    # both paths + requirement -> proof table
+│   └── Walkthrough-Red-Blue-Lab.pdf   # same document, upload-ready A4 PDF
 ├── logs-sample/                 # sample telemetry (the live logs/ dir is git-ignored)
 ├── logs/                        # created at deploy time, bind-mounted to /opt/admin/logs
 ├── PROXMOX-DEPLOY.md            # deploy as a VM on Proxmox (GUI / cloud-init / template export)
